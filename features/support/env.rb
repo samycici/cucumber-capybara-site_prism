@@ -9,7 +9,6 @@ Before do |feature|
   end
   Capybara.configure do |config|
     config.default_driver = :chrome
-    config.app_host = "http://d.busca.estacio.rj.br/"
   end
 end
 

@@ -2,7 +2,7 @@
 #!/usr/bin/env ruby
 
 class Busca < SitePrism::Page
-  set_url "http://d.busca.estacio.rj.br/"
+  set_url url
 
   element :busca_curso, ".multiselect-control.form-control"
   element :campo_curso, "input.multiselect-search-field"

@@ -3,7 +3,7 @@
 
 class ResultadoBusca < SitePrism::Page
 
-  elements :lista_ofertas, ".ec-offers-results > div"
-  element :primeira_oferta, ".ec-offers-results > div > a:first-of-type"
+  elements :lista_ofertas, "#main > div > div > main > div > div.col-md-9 > div:nth-child(4) > section"
+  elements :lista_urls_ofertas, ".ec-offers-results > div > a"
 
 end

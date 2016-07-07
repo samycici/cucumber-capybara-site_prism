@@ -16,7 +16,7 @@ class Busca < SitePrism::Page
     busca_curso.click
   end
 
-  def clicar_btn_buscar()
+  def clicar_btn_buscar
     btn_buscar.click
     return ResultadoBusca.new
   end

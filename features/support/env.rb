@@ -2,6 +2,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
+require 'rspec'
 
 Before do |feature|
   Capybara.register_driver :chrome do |app|

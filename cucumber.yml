@@ -1,8 +1,8 @@
 ##YAML Template
 ---
-default: --profile html_report -p chrome -p dev
+default: -p html_report -p chrome -p dev
 html_report: --format progress --format html --out=features_report.html
-firefox: BROWSER=firefox
+firefox: BROWSER=firefox -p dev -p html_report
 chrome: BROWSER=chrome
 dev: AMBIENTE=dev
 hmg: AMBIENTE=hmg

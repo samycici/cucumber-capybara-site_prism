@@ -21,11 +21,14 @@ Before do |feature|
       config.default_driver = :selenium
   end
   Capybara.page.driver.browser.manage.window.maximize
+  Capybara.default_max_wait_time = 5
 end
 
 After do |scenario|
   if scenario.failed?
-    Capybara.page.driver.browser.save_screenshot("screenshots/#{scenario.__id__}.png")
+    diretorio = 'screenshots'
+    Dir.mkdir(diretorio) unless File.exists?(diretorio)
+    Capybara.page.driver.browser.save_screenshot("screenshots/#{scenario.name}.png")
   end
   Capybara.current_session.driver.quit
 end

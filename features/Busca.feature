@@ -1,4 +1,5 @@
 # language: pt
+
 Funcionalidade: Buscar um curso
   Para continuar o processo de inscrição,
   Como candidato,

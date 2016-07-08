@@ -6,24 +6,24 @@ require 'rspec'
 require 'yaml'
 require 'capybara/poltergeist'
 
-$ambiente = ENV['AMBIENTE']
-$browser = ENV['BROWSER']
+@@browser = ENV['BROWSER']
 
 Capybara.register_driver :selenium do |app|
-  if $browser == 'chrome'
+  if @@browser.eql?('chrome')
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
-  elsif $browser == 'firefox'
+  elsif @@browser.eql?('firefox')
     Capybara::Selenium::Driver.new(app, :browser => :firefox)
-  elsif $browser == 'poltergeist'
-    options = {js_errors: false}
+  elsif @@browser.eql?('poltergeist')
+    options = { js_errors: false }
     Capybara::Poltergeist::Driver.new(app, options)
   end
 end
 
 Before do |feature|
-  $config = YAML.load_file(File.dirname(__FILE__) + '/config/%s.yaml' % [$ambiente])
+  ambiente = ENV['AMBIENTE']
+  $config = YAML.load_file(File.dirname(__FILE__) + "/config/#{ambiente}.yaml")
   Capybara.configure do |config|
-      config.default_driver = :selenium
+    config.default_driver = :selenium
   end
   Capybara.default_max_wait_time = 10
 end
@@ -31,14 +31,15 @@ end
 After do |scenario|
   if scenario.failed?
     diretorio = 'screenshots'
-    Dir.mkdir(diretorio) unless File.exists?(diretorio)
-    if $browser == 'poltergeist'
-      Capybara.page.save_screenshot("screenshots/#{scenario.name}.png")
+    arquivo = "#{diretorio}/#{scenario.name}.png"
+    Dir.mkdir(diretorio) unless File.exist?(diretorio)
+    if !@@browser.eql?('poltergeist')
+      Capybara.page.save_screenshot(arquivo)
     else
-      Capybara.page.driver.browser.save_screenshot("screenshots/#{scenario.name}.png")
+      Capybara.page.driver.browser.save_screenshot(arquivo)
     end
   end
-  if $browser != 'poltergeist'
+  unless @@browser.eql?('poltergeist')
     Capybara.current_session.driver.quit
   end
 end

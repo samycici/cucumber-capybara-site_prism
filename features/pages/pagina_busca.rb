@@ -1,8 +1,6 @@
 # encoding: utf-8
 # !/usr/bin/env ruby
-
 class Busca < SitePrism::Page
-
   element :busca_curso, '.multiselect-control.form-control'
   element :campo_curso, 'input.multiselect-search-field'
   element :espaco_branco, 'div.multiselect-dropdown > div.multiselect-options > div > span'
@@ -18,7 +16,6 @@ class Busca < SitePrism::Page
   def clicar_btn_buscar
     btn_buscar.click
     sleep 5
-    return ResultadoBusca.new
+    ResultadoBusca.new
   end
-
 end

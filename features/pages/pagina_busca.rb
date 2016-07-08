@@ -17,9 +17,8 @@ class Busca < SitePrism::Page
 
   def clicar_btn_buscar
     btn_buscar.click
-    sleep 3
+    sleep 5
     return ResultadoBusca.new
-
   end
 
 end

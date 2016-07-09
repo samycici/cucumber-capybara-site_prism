@@ -29,7 +29,5 @@ end
 Então(/^visualizo a lista de resultados correspondente ao tipo de modalidade "([^"]*)" escolhida$/) do |modalidade|
   lista = @resultado_busca.get_lista_modalidades
   expect(lista.size).to eq(10)
-  lista.each do |modalidade_atual|
-    expect(modalidade_atual).to eq(modalidade)
-  end
+  expect(lista).to all_list_elements_eq(modalidade)
 end

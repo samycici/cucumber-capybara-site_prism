@@ -1,6 +1,28 @@
 ## Configurando o ambiente ##
-### Ativar rbenv 2.3.1 ###
+
+### Instalar rbenv ###
 Execute o seguinte comando:
+```shell
+brew install rbenv
+```
+
+Inclua no ~/.bash_profile:
+```shell
+eval "$(rbenv init -)"
+```
+
+Listar as versões disponíveis:
+```shell
+rbenv install -l
+```
+
+Instalar uma versão:
+```shell
+rbenv install 2.3.1
+```
+
+### Ativar rbenv 2.3.1 ###
+Navegar para pasta desejada e executar o seguinte comando:
 ```shell
 rbenv local 2.3.1
 ```
@@ -12,7 +34,7 @@ bundle install
 ```
 
 ### Drivers necessários: ###
-Instalar [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) e [phantomjs](http://phantomjs.org/)
+Instalar [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) e [phantomjs](http://phantomjs.org/) e adicionar ao PATH
 
 ### Executando os testes em DEV usando Chrome###
 Execute o seguinte comando dentro da raiz do projeto:

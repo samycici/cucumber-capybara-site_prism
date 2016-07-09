@@ -72,3 +72,9 @@ Execute o seguinte comando dentro da raiz do projeto:
 ```shell
 bundle exec cucumber -p html_report
 ```
+
+### Executando tags###
+Execute o seguinte comando dentro da raiz do projeto:
+```shell
+bundle exec cucumber --tags @run
+```

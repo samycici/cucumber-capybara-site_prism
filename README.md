@@ -100,3 +100,9 @@ Execute o seguinte comando dentro da raiz do projeto:
 ```shell
 bundle exec cucumber --tags @run
 ```
+
+### Rodados specs de TDD###
+Execute o seguinte comando dentro de TDD:
+```shell
+bundle exec rspec calculadora_spec.rb
+```

@@ -6,7 +6,7 @@ class Busca < SitePrism::Page
   element :espaco_branco, 'div.multiselect-dropdown > div.multiselect-options > div > span'
   element :btn_buscar, '.btn.btn-default.btn-lg.btn-block.pull-right'
 
-  def selecionar_curso(curso)
+  def selecionar_curso curso
     busca_curso.click
     campo_curso.set curso
     espaco_branco.click

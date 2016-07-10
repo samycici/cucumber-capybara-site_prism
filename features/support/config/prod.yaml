@@ -1,4 +1,3 @@
 url: "http://busca.estacio.br/"
-
-um_curso:
-  curso: 'ADMINISTRAÇÃO'
+curso1: "ADMINISTRAÇÃO"
+curso2: "EVENTOS"

@@ -5,7 +5,7 @@ Dado(/^que eu esteja na home de busca$/) do
 end
 
 Dado(/^que eu faça uma busca por um curso$/) do
-  @busca.selecionar_curso(CONFIG['um_curso']['curso'])
+  @busca.selecionar_cursos(CONFIG['curso1'])
   @resultado_busca = @busca.clicar_btn_buscar
 end
 

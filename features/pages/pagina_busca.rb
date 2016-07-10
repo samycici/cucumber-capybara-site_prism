@@ -3,13 +3,15 @@
 class Busca < SitePrism::Page
   element :busca_curso, '.multiselect-control.form-control'
   element :campo_curso, 'input.multiselect-search-field'
-  element :espaco_branco, 'div.multiselect-dropdown > div.multiselect-options > div > span'
+  element :curso_pesquisado, 'div.multiselect-dropdown > div.multiselect-options > div > span'
   element :btn_buscar, '.btn.btn-default.btn-lg.btn-block.pull-right'
 
-  def selecionar_curso(curso)
+  def selecionar_cursos( *cursos )
     busca_curso.click
-    campo_curso.set curso
-    espaco_branco.click
+    cursos.each do |curso|
+      campo_curso.set curso
+      curso_pesquisado.click
+    end
     busca_curso.click
   end
 

@@ -18,7 +18,7 @@ Funcionalidade: Buscar um curso
     Então sou redirecionado para a página de inscrições com os parâmetros referentes ao curso buscado
 
   Esquema do Cenário: Filtrar resultado de busca por Modalidade
-  
+
       Dado que eu faça uma busca por um curso
       Quando eu filtro pela modalidade "<modalidade>"
       Então visualizo a lista de resultados correspondente ao tipo de modalidade "<modalidade>" escolhida

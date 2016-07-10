@@ -10,12 +10,8 @@ class ResultadoBusca < SitePrism::Page
     page.execute_script("document.querySelector('input[label=\"#{filtro}\"]').click()")
     sleep 3
   end
-
+  
   def get_lista_modalidades
-    modalidades = []
-    lista_modalidades.each do |modalidade|
-      modalidades.push(modalidade.text)
-    end
-    modalidades
+    modalidades = lista_modalidades.map {|modalidade| modalidade.text}
   end
 end

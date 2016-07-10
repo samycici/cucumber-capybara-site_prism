@@ -6,14 +6,14 @@ require 'rspec'
 require 'yaml'
 require 'capybara/poltergeist'
 
-@@browser = ENV['BROWSER']
+BROWSER = ENV['BROWSER']
 
 Capybara.register_driver :selenium do |app|
-  if @@browser.eql?('chrome')
+  if BROWSER.eql?('chrome')
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
-  elsif @@browser.eql?('firefox')
+  elsif BROWSER.eql?('firefox')
     Capybara::Selenium::Driver.new(app, :browser => :firefox)
-  elsif @@browser.eql?('poltergeist')
+  elsif BROWSER.eql?('poltergeist')
     options = { js_errors: false }
     Capybara::Poltergeist::Driver.new(app, options)
   end
@@ -21,7 +21,7 @@ end
 
 Before do |feature|
   ambiente = ENV['AMBIENTE']
-  $config = YAML.load_file(File.dirname(__FILE__) + "/config/#{ambiente}.yaml")
+  CONFIG = YAML.load_file(File.dirname(__FILE__) + "/config/#{ambiente}.yaml")
   Capybara.configure do |config|
     config.default_driver = :selenium
   end
@@ -33,13 +33,13 @@ After do |scenario|
     diretorio = 'screenshots'
     arquivo = "#{diretorio}/#{scenario.name}.png"
     Dir.mkdir(diretorio) unless File.exist?(diretorio)
-    if !@@browser.eql?('poltergeist')
+    if BROWSER.eql?('poltergeist')
       Capybara.page.save_screenshot(arquivo)
     else
       Capybara.page.driver.browser.save_screenshot(arquivo)
     end
   end
-  unless @@browser.eql?('poltergeist')
+  unless BROWSER.eql?('poltergeist')
     Capybara.current_session.driver.quit
   end
 end

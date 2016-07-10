@@ -1,11 +1,11 @@
 ###### Dado #####
 Dado(/^que eu esteja na home de busca$/) do
   @busca = Busca.new
-  @busca.visit($config['url'])
+  @busca.visit(CONFIG['url'])
 end
 
 Dado(/^que eu faça uma busca por um curso$/) do
-  @busca.selecionar_curso($config['um_curso']['curso'])
+  @busca.selecionar_curso(CONFIG['um_curso']['curso'])
   @resultado_busca = @busca.clicar_btn_buscar
 end
 

@@ -77,24 +77,6 @@ Execute o seguinte comando dentro da raiz do projeto:
 bundle exec cucumber -p poltergeist -p hmg
 ```
 
-### Executando os testes em PROD usando Chrome###
-Execute o seguinte comando dentro da raiz do projeto:
-```shell
-bundle exec cucumber -p chrome -p prod
-```
-
-### Executando os testes em PROD usando Firefox###
-Execute o seguinte comando dentro da raiz do projeto:
-```shell
-bundle exec cucumber -p firefox -p prod
-```
-
-### Executando os testes em PROD usando Poltergeist###
-Execute o seguinte comando dentro da raiz do projeto:
-```shell
-bundle exec cucumber -p poltergeist -p prod
-```
-
 ### Gerando relatório HTML###
 Execute o seguinte comando dentro da raiz do projeto:
 ```shell

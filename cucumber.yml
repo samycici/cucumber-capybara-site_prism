@@ -2,9 +2,8 @@
 ---
 default: -p html_report -p chrome -p dev
 html_report: --format progress --format html --out=features_report.html
-firefox: BROWSER=firefox 
+firefox: BROWSER=firefox
 chrome: BROWSER=chrome
 poltergeist: BROWSER=poltergeist
 dev: AMBIENTE=dev
 hmg: AMBIENTE=hmg
-prod: AMBIENTE=prod

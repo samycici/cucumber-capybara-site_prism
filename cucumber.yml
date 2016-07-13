@@ -5,5 +5,6 @@ html_report: --format progress --format html --out=features_report.html
 firefox: BROWSER=firefox
 chrome: BROWSER=chrome
 poltergeist: BROWSER=poltergeist
+internet_explorer: BROWSER=internet_explorer
 dev: AMBIENTE=dev
 hmg: AMBIENTE=hmg

@@ -1,5 +1,5 @@
 ###### Dado #####
-Dado(/^que eu esteja na home de busca$/) do
+Dado (/^que eu esteja na home de busca$/) do
   @busca = Busca.new
   @busca.visit(CONFIG['url'])
 end
@@ -17,7 +17,7 @@ Quando(/^eu clico na imagem do resultado de busca desse curso$/) do
 end
 
 Quando(/^eu filtro pela modalidade "([^"]*)"$/) do |modalidade|
-  @resultado_busca.selecionar_filtro(modalidade)
+  @resultado_busca.filtro.selecionar_filtro(modalidade)
 end
 
 ###### Então #####

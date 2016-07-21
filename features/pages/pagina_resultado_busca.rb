@@ -8,7 +8,10 @@ class ResultadoBusca < SitePrism::Page
   elements :lista_imagens_ofertas, '.ec-offers-results > div > a:nth-child(1)'
   elements :lista_btn_inscrevase, '#\32 > div.rmq-6c18f325.rmq-e47c285f.rmq-9a5cfdcc > div > a.rmq-4d8a5834.btn.btn-primary'
   elements :lista_modalidades, '#\32 > div.rmq-c4ecc7e4.rmq-722042ff.rmq-2c87bfe9 > div.rmq-c92128c6 > div:nth-child(3) > div > span:nth-child(2)'
-  elements :lista_mensalidades, 'div.rmq-6c18f325.rmq-e47c285f.rmq-9a5cfdcc > p > span.rmq-7abb7b0e'
+  elements :lista_mensalidades, "div.rmq-6c18f325.rmq-e47c285f.rmq-9a5cfdcc > p > span.rmq-7abb7b0e"
+  elements :lista_forma_ingresso, "div.rmq-c4ecc7e4.rmq-722042ff.rmq-2c87bfe9 > div.rmq-c92128c6 > div:nth-child(5) > div > span:nth-child(2)"
+  elements :lista_turnos, "div.rmq-c4ecc7e4.rmq-722042ff.rmq-2c87bfe9 > div.rmq-c92128c6 > div:nth-child(4) > div > span:nth-child(2)"
+  elements :lista_tipos_formacao, "div.rmq-c4ecc7e4.rmq-722042ff.rmq-2c87bfe9 > div.rmq-c92128c6 > div:nth-child(1) > div > span:nth-child(2)"
 
   element :ordenar_a_z, "#main > div > div > main > div.row > div.col-md-9 > div:nth-child(4) > div > a:nth-child(2)"
   element :ordenar_z_a, "#main > div > div > main > div.row > div.col-md-9 > div:nth-child(4) > div > a:nth-child(3)"
@@ -31,6 +34,18 @@ class ResultadoBusca < SitePrism::Page
     mensalidades = lista_mensalidades.map {|mensalidade| mensalidade.text}
   end
 
+  def get_lista_forma_ingresso
+    formas_ingresso = lista_forma_ingresso.map {|forma_ingresso| forma_ingresso.text}
+  end
+
+  def get_lista_turnos
+    turnos = lista_turnos.map {|turno| turno.text}
+  end
+
+  def get_lista_tipos_formacao
+    tipos_formacao = lista_tipos_formacao.map {|formacao| formacao.text}
+  end
+
   def get_range_mensalidades mensalidade
     mensalidades = {
       "Até R$199" => [0, 199],
@@ -40,6 +55,20 @@ class ResultadoBusca < SitePrism::Page
       "Acima de R$1.000" => [1000, 10000]
     }
     mensalidades[mensalidade]
+  end
+
+  def get_forma_ingresso forma_ingresso
+    formas_ingresso = {
+      "Vestibular" => "Vestibular",
+      "ENEM" => "ENEM",
+      "Transferência" => "Transferência",
+      "Segunda Graduação" => "2ª Graduação"
+    }
+    formas_ingresso[forma_ingresso]
+  end
+
+  def get_turnos_disponiveis turno
+    [turno, "virtual"]
   end
 
   def clicar_btn btn

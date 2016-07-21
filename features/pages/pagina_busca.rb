@@ -3,6 +3,11 @@
 require_relative 'section_filtros.rb'
 
 class Busca < SitePrism::Page
+
+  element :busca_estado, :xpath, "//*[contains(@id,'select2-estados')]"
+  element :campo_estado, 'input.select2-search__field'
+  element :estado_pesquisado, '.select2-results__option.select2-results__option--highlighted'
+
   element :busca_curso, '.multiselect-control.form-control'
   element :campo_curso, 'input.multiselect-search-field'
   element :curso_pesquisado, 'div.multiselect-dropdown > div.multiselect-options > div > span'
@@ -16,6 +21,12 @@ class Busca < SitePrism::Page
       curso_pesquisado.click
     end
     busca_curso.click
+  end
+
+  def selecionar_estado estado
+    busca_estado.click
+    campo_estado.set estado
+    estado_pesquisado.click
   end
 
   def clicar_btn_buscar

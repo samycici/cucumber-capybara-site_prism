@@ -1,9 +1,11 @@
 Before do |feature|
   CONFIG = YAML.load_file(File.dirname(__FILE__) + "/config/#{AMBIENTE}.yaml")
+
   Capybara.configure do |config|
     config.default_driver = :selenium
   end
   Capybara.default_max_wait_time = 20
+
 end
 
 After do |scenario|

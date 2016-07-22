@@ -104,3 +104,5 @@ Então(/^visualizo uma lista de resultados sobre o curso "([^"]*)"$/) do |curso|
   ... e tantos outros expects que podem ser utilizados
 end
 ```
+
+## [Ir para Dicas de manipulação de elementos](Dicas_manipulacao_elementos.md)

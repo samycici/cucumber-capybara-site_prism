@@ -1,3 +1,10 @@
+# Ordem de leitura:
+
+1. [Conhecendo a Estrutura](https://github.com/samycici/Conhecendo_estrutura.md);
+2. [README](https://github.com/samycici/cucumber-capybara-site_prism/blob/master/README.md);
+3. [Criando e Implementado sua Primeira Feature](https://github.com/samycici/Criando_e_implementando_sua_primeira_feature.md);
+4. [Dicas de manipulação de elementos](https://github.com/samycici/Dicas_manipulacao_elementos.md)
+
 ## Configurando o ambiente ##
 
 ### Instalar rbenv ###

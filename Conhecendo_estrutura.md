@@ -52,7 +52,7 @@ Nos hooks estão definidos os ```Before``` e ```After``` que o cucumber vai exec
 
 No ```Before``` temos:
 - seleção de qual arquivo da pasta ```features/support/config``` será utilizado;
-- configuração de qual driver o Capybara vai utilizar
+- configuração de qual driver o Capybara vai utilizar (chrome, firefox, poltergeist até o momento)
 - configuração do tempo máximo de espera do Capybara.
 
 No ```After``` temos:

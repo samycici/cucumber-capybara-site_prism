@@ -6,7 +6,7 @@ end
 
 Dado(/^que eu faça uma busca por um curso$/) do
   @busca.selecionar_cursos(CONFIG['curso1'])
-  @resultado_busca = @busca.clicar_btn_buscar
+  @resultado_busca = @busca.clicar_btn_buscar(@busca.btn_buscar)
 end
 
 ###### Quando #####

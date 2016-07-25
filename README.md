@@ -47,7 +47,9 @@ bundle install
 ```
 
 ### Drivers necessários: ###
-Instalar [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) e [phantomjs](http://phantomjs.org/) e adicionar ao PATH
+Instalar [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) e [phantomjs](http://phantomjs.org/) e adicionar ao PATH.
+
+Instalar a extensão do [Safari para webdriver](http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz).
 
 ### Executando os testes em DEV usando Chrome###
 Execute o seguinte comando dentro da raiz do projeto:

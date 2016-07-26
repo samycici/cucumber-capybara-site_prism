@@ -84,6 +84,12 @@ Execute o seguinte comando dentro da raiz do projeto:
 bundle exec cucumber -p poltergeist -p dev
 ```
 
+### Executando os testes em DEV usando Internet Explorer###
+Execute o seguinte comando dentro da raiz do projeto:
+```shell
+bundle exec cucumber -p internet_explorer -p dev
+```
+
 ### Executando os testes em HMG usando Chrome###
 Execute o seguinte comando dentro da raiz do projeto:
 ```shell
@@ -99,6 +105,12 @@ bundle exec cucumber -p firefox -p hmg
 Execute o seguinte comando dentro da raiz do projeto:
 ```shell
 bundle exec cucumber -p poltergeist -p hmg
+```
+
+### Executando os testes em HMG usando Internet Explorer###
+Execute o seguinte comando dentro da raiz do projeto:
+```shell
+bundle exec cucumber -p internet_explorer -p hmg
 ```
 
 ### Gerando relatório HTML###

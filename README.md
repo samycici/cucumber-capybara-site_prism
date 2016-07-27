@@ -49,7 +49,7 @@ bundle install
 #### Windows ####
 
 Instale o pacote FFI
-* `bundle install ffi --platform ruby` (pode demorar um pouco)
+* `gem install ffi --platform ruby` (pode demorar um pouco)
 
 ### Drivers necessários: ###
 

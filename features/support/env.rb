@@ -7,7 +7,7 @@ require 'yaml'
 require 'capybara/poltergeist'
 
 BROWSER = ENV['BROWSER']
-AMBIENTE = ENV['AMBIENTE']
+ENVIRONMENT_TYPE = ENV['ENVIRONMENT_TYPE']
 
 Capybara.register_driver :selenium do |app|
   if BROWSER.eql?('chrome')

@@ -46,10 +46,25 @@ Execute o seguinte comando dentro da raiz do projeto:
 bundle install
 ```
 
-### Drivers necessários: ###
-Instalar [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) e [phantomjs](http://phantomjs.org/) e adicionar ao PATH.
+#### Windows ####
 
-Instalar a extensão do [Safari para webdriver](http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz).
+Instale o pacote FFI
+* `gem install ffi --platform ruby` (pode demorar um pouco)
+
+### Drivers necessários: ###
+
+* Instalar e colocar no PATH: 
+    * [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
+    * [phantomjs](http://phantomjs.org/)
+    * [InternetExplorerDriver](http://www.seleniumhq.org/download/) Escolha a versão correspondente 32 ou 64bit
+* Instalar a extensão do [Safari para webdriver](http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz).
+
+#### Preparando o Internet Explorer ####
+
+1. Verifique o zoom configurado. Deve estar em 100%:
+    * ![Passo 1](readme_img/step_1.png?raw=true "Verificar zoom")
+2. Desabilite o 'Modo Protegido' para todas as zonas em Opções de Internet > Segurança:
+    * ![Passo 2](readme_img/step_2.png?raw=true "Desabilitar 'Modo Protegido'")
 
 ### Executando os testes em DEV usando Chrome###
 Execute o seguinte comando dentro da raiz do projeto:
@@ -69,6 +84,12 @@ Execute o seguinte comando dentro da raiz do projeto:
 bundle exec cucumber -p poltergeist -p dev
 ```
 
+### Executando os testes em DEV usando Internet Explorer###
+Execute o seguinte comando dentro da raiz do projeto:
+```shell
+bundle exec cucumber -p internet_explorer -p dev
+```
+
 ### Executando os testes em HMG usando Chrome###
 Execute o seguinte comando dentro da raiz do projeto:
 ```shell
@@ -84,6 +105,12 @@ bundle exec cucumber -p firefox -p hmg
 Execute o seguinte comando dentro da raiz do projeto:
 ```shell
 bundle exec cucumber -p poltergeist -p hmg
+```
+
+### Executando os testes em HMG usando Internet Explorer###
+Execute o seguinte comando dentro da raiz do projeto:
+```shell
+bundle exec cucumber -p internet_explorer -p hmg
 ```
 
 ### Gerando relatório HTML###

@@ -1,3 +1,4 @@
+# cucumber-capybara-site_prism [![Circle CI](https://circleci.com/gh/samycici/cucumber-capybara-site_prism.svg?style=shield)](https://circleci.com/gh/samycici/cucumber-capybara-site_prism)
 # Ordem de leitura:
 
 1. [Conhecendo a Estrutura](Conhecendo_estrutura.md);
@@ -53,7 +54,7 @@ Instale o pacote FFI
 
 ### Drivers necessários: ###
 
-* Instalar e colocar no PATH: 
+* Instalar e colocar no PATH:
     * [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/)
     * [phantomjs](http://phantomjs.org/)
     * [InternetExplorerDriver](http://www.seleniumhq.org/download/) Escolha a versão correspondente 32 ou 64bit

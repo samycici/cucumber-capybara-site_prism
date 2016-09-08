@@ -8,8 +8,4 @@ dependencies:
 test:
   override:
     - bundle install
-    - bundle exec cucumber
-
-general:
-  artifacts:
-    - "features_report.html"
+    - bundle exec cucumber -p chrome -p dev
